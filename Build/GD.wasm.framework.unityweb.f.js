@@ -14830,13 +14830,13 @@
     function _openWindow(link) {
         var url = Pointer_stringify(link);
         document.onmouseup = (function() {
-            window.open(url, "_blank");
+            window.open("?"+url, "_blank");
             document.onmouseup = null
         }
         );
         var a = window.document.createElement("a");
         a.target = "_blank";
-        a.href = url;
+        a.href = "?"+url;
         var e = window.document.createEvent("MouseEvents");
         e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, true, false, false, false, 0, null);
         a.dispatchEvent(e)
